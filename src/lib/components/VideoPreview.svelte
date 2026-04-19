@@ -34,7 +34,7 @@
       <!-- Placeholder YouTube Video iframe -->
       <iframe 
         class="w-full h-full relative z-10"
-        src="https://www.youtube.com/embed/yQv1WvC11z0?rel=0" 
+        src="https://www.youtube.com/embed/-M2a8EqsYB0?rel=0" 
         title="Contoh Tari Bedana" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

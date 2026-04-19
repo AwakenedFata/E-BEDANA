@@ -1,28 +1,40 @@
 <script>
   import { GraduationCap, BookOpen } from 'lucide-svelte';
 
-  const penyusun = {
-    name: 'Nama Mahasiswa',
-    role: 'Penyusun',
-    nim: '2011XXXXXXX',
-    program: 'Pendidikan Seni Tari',
-    description: 'Mahasiswa Program Studi Pendidikan Seni Tari yang menyusun media pembelajaran interaktif Tari Bedana sebagai bagian dari tugas akhir.',
-    avatar: null
-  };
-
-  const pembimbing = [
+  const penyusun = [
     {
-      name: 'Nama Dosen Pembimbing I',
-      role: 'Pembimbing I',
-      nip: '19XXXXXXXXXX',
-      description: 'Dosen pembimbing utama yang membimbing penyusunan media pembelajaran interaktif Tari Bedana.',
+      name: 'Jeliya Dama Yanti',
+      role: 'Penyusun',
+      nim: '2413043004',
+      ttl: 'Kembahang, 6 Januari 2007',
+      alamat: 'Liwa, Lampung Barat',
+      program: 'Mahasiswa Pendidikan Tari Angkatan 2024',
       avatar: null
     },
     {
-      name: 'Nama Dosen Pembimbing II',
-      role: 'Pembimbing II',
-      nip: '19XXXXXXXXXX',
-      description: 'Dosen pembimbing pendamping yang memberikan arahan dalam pengembangan konten dan evaluasi.',
+      name: 'Dwi Renata',
+      role: 'Penyusun',
+      nim: '2413043040',
+      ttl: 'Tanggamus, 15 Agustus 2006',
+      alamat: 'Tanggamus',
+      program: 'Mahasiswa Pendidikan Tari Angkatan 2024',
+      avatar: null
+    }
+  ];
+
+  const pembimbing = [
+    {
+      name: 'Amelia Hani Saputri, S.Pd., M.Pd.',
+      role: 'Pembimbing',
+      nip: '199503112019032017',
+      description: 'Dosen Pendidikan Tari FKIP Unila',
+      avatar: null
+    },
+    {
+      name: 'Afrizal Yudha Setiawan, S.Pd., M.Pd.',
+      role: 'Pembimbing',
+      nip: '199304292019031017',
+      description: 'Dosen Pendidikan Tari FKIP Unila',
       avatar: null
     }
   ];
@@ -63,32 +75,42 @@
         <div class="w-9 h-9 rounded-lg bg-bedana-red/20 border border-bedana-red/30 flex items-center justify-center">
           <GraduationCap size={18} class="text-bedana-red" />
         </div>
-        <h3 class="text-xl font-bold text-white">Penyusun</h3>
+        <h3 class="text-xl font-bold text-white">Profil Penyusun</h3>
       </div>
 
-      <div class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-[0_0_25px_rgba(218,165,32,0.15)] overflow-hidden hover:shadow-[0_0_30px_rgba(218,165,32,0.3)] transition-all duration-300">
-        <div class="flex flex-col sm:flex-row">
-          <!-- Avatar -->
-          <div class="sm:w-56 bg-black/40 flex items-center justify-center p-8 sm:p-0">
-            <div class="w-32 h-32 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border-2 border-bedana-gold shadow-[0_0_15px_rgba(218,165,32,0.5)] overflow-hidden">
-              {#if penyusun.avatar}
-                <img src={penyusun.avatar} alt={penyusun.name} class="w-full h-full object-cover" />
-              {:else}
-                <div class="w-full h-full bg-gradient-to-br from-bedana-red to-bedana-gold flex items-center justify-center">
-                  <span class="text-white text-4xl font-bold">{penyusun.name.charAt(0)}</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {#each penyusun as m}
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-[0_0_25px_rgba(218,165,32,0.1)] hover:shadow-[0_0_30px_rgba(218,165,32,0.3)] hover:-translate-y-1 transition-all duration-300 overflow-hidden group">
+            <div class="h-1.5 bg-gradient-to-r from-bedana-red to-bedana-gold"></div>
+            <div class="p-6">
+              <!-- Avatar Stack & Name -->
+              <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-black/40 shadow-inner flex items-center justify-center border-2 border-bedana-red group-hover:shadow-[0_0_15px_rgba(220,38,38,0.4)] transition-all duration-300 overflow-hidden shrink-0">
+                  {#if m.avatar}
+                    <img src={m.avatar} alt={m.name} class="w-full h-full object-cover" />
+                  {:else}
+                    <div class="w-full h-full bg-gradient-to-br from-bedana-red to-bedana-gold flex items-center justify-center">
+                      <span class="text-white text-3xl font-bold">{m.name.charAt(0)}</span>
+                    </div>
+                  {/if}
                 </div>
-              {/if}
+                
+                <div class="text-center sm:text-left flex-1 w-full">
+                  <span class="inline-block px-3 py-1 bg-bedana-red/20 border border-bedana-red/30 text-bedana-gold text-xs font-semibold rounded-full mb-3">{m.role}</span>
+                  <h4 class="text-xl font-bold text-white mb-2">{m.name}</h4>
+                  
+                  <div class="space-y-1.5 text-sm">
+                    <p class="flex shadow-sm"><span class="w-16 text-gray-400 font-semibold shrink-0">NPM</span><span class="text-gray-300">: {m.nim}</span></p>
+                    <p class="flex shadow-sm"><span class="w-16 text-gray-400 font-semibold shrink-0">TTL</span><span class="text-gray-300">: {m.ttl}</span></p>
+                    <p class="flex shadow-sm"><span class="w-16 text-gray-400 font-semibold shrink-0">Alamat</span><span class="text-gray-300">: {m.alamat}</span></p>
+                  </div>
+                  
+                  <p class="text-sm text-bedana-gold font-medium mt-4 pt-4 border-t border-white/10">{m.program}</p>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- Info -->
-          <div class="flex-1 p-6 sm:p-8">
-            <span class="inline-block px-3 py-1 bg-bedana-red/20 border border-bedana-red/30 text-bedana-gold text-xs font-semibold rounded-full mb-3">{penyusun.role}</span>
-            <h4 class="text-2xl font-bold text-white mb-1">{penyusun.name}</h4>
-            <p class="text-sm text-gray-400 mb-1">NIM: {penyusun.nim}</p>
-            <p class="text-sm text-bedana-gold font-medium mb-4">{penyusun.program}</p>
-            <p class="text-gray-300 leading-relaxed font-light">{penyusun.description}</p>
-          </div>
-        </div>
+        {/each}
       </div>
     </div>
 

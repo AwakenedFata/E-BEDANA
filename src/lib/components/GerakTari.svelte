@@ -7,65 +7,56 @@
     {
       id: 'tahtim',
       name: 'Tahtim',
-      description: 'Gerakan pembuka Tari Bedana yang dilakukan sebagai penghormatan. Penari berdiri tegak dengan kedua tangan diangkat sejajar bahu, lalu diturunkan perlahan sebagai tanda dimulainya tarian. Gerakan ini melambangkan rasa hormat kepada penonton dan sesama penari.',
-      videoId: 'yQv1WvC11z0',
-      color: 'from-red-500 to-red-700'
-    },
-    {
-      id: 'khesek-injing',
-      name: 'Khesek Injing',
-      description: 'Gerakan langkah kaki kecil-kecil dengan posisi berjinjit. Kaki bergerak maju mundur secara bergantian dengan ritme yang cepat dan ringan. Gerakan ini menggambarkan kelincahan dan kegembiraan pemuda-pemudi Lampung.',
-      videoId: 'yQv1WvC11z0',
-      color: 'from-amber-500 to-amber-700'
+      description: '(atau Tahto/Ngesit): Gerakan kaki melangkah maju secara berurutan.',
+      videoUrl: '/Tahmtim/tahtim.mp4'
     },
     {
       id: 'khesek-gantung',
       name: 'Khesek Gantung',
-      description: 'Variasi dari Khesek Injing dengan salah satu kaki diangkat atau digantung saat melakukan langkah. Gerakan ini memerlukan keseimbangan yang baik dan menunjukkan keterampilan penari dalam mengendalikan tubuh.',
-      videoId: 'yQv1WvC11z0',
-      color: 'from-orange-500 to-orange-700'
+      description: 'Gerakan kaki melangkah maju, lalu mengayunkan kaki kanan ke samping.',
+      videoUrl: '/Kesek Gantung/kesekgantung.mp4'
+    },
+    {
+      id: 'khesek-injing',
+      name: 'Khesek Injing',
+      description: 'Gerakan kaki melangkah dan kemudian mengehentakkan kaki dengan posisi jinjit.',
+      videoUrl: '/Kesek Injing/kesekinjing.mp4'
     },
     {
       id: 'jimpang',
       name: 'Jimpang',
-      description: 'Gerakan menyilangkan kaki ke samping kiri dan kanan secara bergantian. Tubuh sedikit condong mengikuti arah langkah kaki. Gerakan ini melambangkan keluwesan dan keindahan gerak dalam kehidupan masyarakat Lampung.',
-      videoId: 'yQv1WvC11z0',
-      color: 'from-yellow-500 to-yellow-700'
+      description: 'Gerakan maju dan mundur dengan langkah yang berbeda.',
+      videoUrl: '/Jimpang/jimpang.mp4'
     },
     {
       id: 'humbak-moloh',
       name: 'Humbak Moloh',
-      description: 'Gerakan yang menyerupai ombak atau gelombang. Tangan dan badan bergerak mengalir seperti air yang bergelombang. Gerakan ini terinspirasi dari alam Lampung yang dekat dengan laut dan melambangkan keharmonisan dengan alam.',
-      videoId: 'yQv1WvC11z0',
-      color: 'from-teal-500 to-teal-700'
+      description: 'Gerakan kaki menyamping secara berurutan.',
+      videoUrl: '/Umbak Muloh/Versi cowok/umbakmulohcowok.mp4'
     },
     {
       id: 'ayun',
       name: 'Ayun',
-      description: 'Gerakan mengayunkan tangan dan kaki secara berirama. Kedua tangan diayun ke depan dan belakang sementara kaki melangkah mengikuti irama musik pengiring. Gerakan ini menggambarkan keselarasan dan keseimbangan hidup.',
-      videoId: 'yQv1WvC11z0',
-      color: 'from-emerald-500 to-emerald-700'
+      description: 'Gerakan melangkah maju berulang kali.',
+      videoUrl: '/Ayun/ayun.mp4'
     },
     {
       id: 'ayun-gantung',
       name: 'Ayun Gantung',
-      description: 'Pengembangan dari gerakan Ayun dengan menambahkan elemen kaki yang diangkat (digantung) saat mengayun. Kombinasi ayunan tangan dan kaki yang terangkat menciptakan dinamika gerak yang lebih kompleks dan menarik.',
-      videoId: 'yQv1WvC11z0',
-      color: 'from-cyan-500 to-cyan-700'
+      description: 'Gerakan mengayunkan kaki dan kemudian merendahkan badan.',
+      videoUrl: '/Ayun Gantung/ayungantung.mp4'
     },
     {
       id: 'belitut',
       name: 'Belitut',
-      description: 'Gerakan memutar atau berputar di tempat dengan langkah kaki yang teratur. Penari berputar dengan anggun sambil menjaga posisi tangan tetap indah. Gerakan ini melambangkan perputaran waktu dan siklus kehidupan.',
-      videoId: 'yQv1WvC11z0',
-      color: 'from-violet-500 to-violet-700'
+      description: 'Gerakan menyilangkan kaki ke depan dan belakang.',
+      videoUrl: '/Blitut/blitut.mp4'
     },
     {
       id: 'gelek',
       name: 'Gelek',
-      description: 'Gerakan penutup yang menandai berakhirnya tarian. Penari melakukan gerakan terakhir dengan penuh penghayatan, kembali ke posisi awal sebagai tanda penghormatan. Gerakan ini menyimbolkan rasa syukur atas selesainya pertunjukan.',
-      videoId: 'yQv1WvC11z0',
-      color: 'from-rose-500 to-rose-700'
+      description: 'Gerakan yang juga sering terlihat pada penari pria.',
+      videoUrl: '/Gelek/gelek.mp4'
     }
   ];
 
@@ -107,7 +98,10 @@
     <div class="text-center mb-14">
       <h2 class="text-3xl font-bold text-white tracking-wide">Ragam Gerak Tari Bedana</h2>
       <div class="w-24 h-1 bg-bedana-gold mx-auto mt-4 rounded-full"></div>
-      <p class="text-gray-300 mt-4 max-w-xl mx-auto font-light">Klik salah satu gerakan untuk melihat penjelasan dan contoh video</p>
+      <p class="text-gray-300 mt-5 max-w-2xl mx-auto font-light leading-relaxed">
+        Tari Bedana memiliki pola lantai sederhana, sering ditarikan berpasangan, dan memiliki fungsi sebagai hiburan, pendidikan serta sebagai media komunikasi dalam kebudayaan Masyarakat Lampung.
+      </p>
+      <p class="text-bedana-gold mt-3 text-sm italic font-medium">Klik salah satu gerakan di bawah untuk melihat contoh videonya</p>
     </div>
 
     <div class="flex flex-col lg:flex-row gap-8">
@@ -156,15 +150,27 @@
             in:fade={{ duration: 300 }}
           >
             <!-- Video -->
-            <div class="aspect-video bg-black relative border-b border-bedana-gold/30">
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/{selectedMovement.videoId}?rel=0"
-                title="Video {selectedMovement.name}"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
+            <div class="aspect-video bg-black relative border-b border-bedana-gold/30 flex items-center justify-center">
+              {#if selectedMovement.videoUrl}
+                {#key selectedMovement.videoUrl}
+                  <video
+                    class="w-full h-full object-contain"
+                    src={selectedMovement.videoUrl}
+                    controls
+                    autoplay
+                    preload="metadata"
+                  >
+                    <track kind="captions">
+                  </video>
+                {/key}
+              {:else}
+                <div class="text-center p-6 flex flex-col items-center justify-center h-full">
+                  <div class="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4">
+                    <img src="/dancer2.png" alt="Not Available" class="w-8 h-8 opacity-50 mix-blend-screen grayscale" />
+                  </div>
+                  <p class="text-gray-400 font-light">Video rekaman untuk gerakan ini belum tersedia.</p>
+                </div>
+              {/if}
             </div>
 
             <!-- Content -->
@@ -214,7 +220,7 @@
         <div class="relative bg-black rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(218,165,32,0.3)] aspect-video border-2 border-bedana-gold/40">
           <iframe
             class="w-full h-full relative z-10"
-            src="https://www.youtube.com/embed/yQv1WvC11z0?rel=0"
+            src="https://www.youtube.com/embed/-M2a8EqsYB0?rel=0"
             title="Video Utuh Tari Bedana"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
