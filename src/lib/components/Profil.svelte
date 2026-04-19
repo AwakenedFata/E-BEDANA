@@ -1,5 +1,6 @@
 <script>
-  import { GraduationCap, BookOpen } from 'lucide-svelte';
+  import { GraduationCap, BookOpen, ArrowLeft } from 'lucide-svelte';
+  import { navigate } from "../stores/router.js";
 
   const penyusun = [
     {
@@ -44,6 +45,15 @@
   <!-- Decorative Background overlay -->
   <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-bedana-red/40 to-bedana-gold/60 z-0 pointer-events-none"></div>
   <div class="absolute inset-0 bg-black/30 z-0 pointer-events-none"></div>
+
+  <!-- Tombol Back -->
+  <button 
+    on:click={() => navigate('home', 'main-menu')}
+    class="absolute top-6 left-6 sm:top-8 sm:left-8 z-30 flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/20 text-white hover:bg-bedana-gold hover:text-black hover:border-bedana-gold transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.5)] group cursor-pointer"
+  >
+    <ArrowLeft size={18} class="group-hover:-translate-x-1 transition-transform" />
+    <span class="font-medium text-sm hidden sm:inline">Menu Utama</span>
+  </button>
 
   <!-- Ornament Top-Left -->
   <div class="absolute top-0 left-0 z-10 w-48 sm:w-64 md:w-80 pointer-events-none opacity-30 scale-y-[-1]">

@@ -1,6 +1,7 @@
 <script>
   import { fade, slide } from 'svelte/transition';
-  import { Play, ChevronRight, X } from 'lucide-svelte';
+  import { Play, ChevronRight, X, ArrowLeft } from 'lucide-svelte';
+  import { navigate } from "../stores/router.js";
 
   // Dance movement data
   const movements = [
@@ -32,7 +33,10 @@
       id: 'humbak-moloh',
       name: 'Humbak Moloh',
       description: 'Gerakan kaki menyamping secara berurutan.',
-      videoUrl: '/Umbak Muloh/Versi cowok/umbakmulohcowok.mp4'
+      videos: [
+        { label: 'Versi Laki-laki', url: '/Umbak Muloh/Versi cowok/umbakmulohcowok.mp4' },
+        { label: 'Versi Perempuan', url: '/Umbak Muloh/Versi Cewek/umbakmulohcewek.mp4' }
+      ]
     },
     {
       id: 'ayun',
@@ -61,9 +65,11 @@
   ];
 
   let selectedMovement = null;
+  let activeSubVideoIndex = 0;
 
   function selectMovement(movement) {
     selectedMovement = movement;
+    activeSubVideoIndex = 0;
   }
 
   function clearSelection() {
@@ -75,6 +81,15 @@
   <!-- Decorative Background overlay -->
   <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-bedana-red/40 to-bedana-gold/60 z-0 pointer-events-none"></div>
   <div class="absolute inset-0 bg-black/30 z-0 pointer-events-none"></div>
+
+  <!-- Tombol Back -->
+  <button 
+    on:click={() => navigate('home', 'main-menu')}
+    class="absolute top-6 left-6 sm:top-8 sm:left-8 z-30 flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/20 text-white hover:bg-bedana-gold hover:text-black hover:border-bedana-gold transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.5)] group cursor-pointer"
+  >
+    <ArrowLeft size={18} class="group-hover:-translate-x-1 transition-transform" />
+    <span class="font-medium text-sm hidden sm:inline">Menu Utama</span>
+  </button>
 
   <!-- Ornament Top-Left -->
   <div class="absolute top-0 left-0 z-10 w-48 sm:w-64 md:w-80 pointer-events-none opacity-30 scale-y-[-1]">
@@ -151,7 +166,19 @@
           >
             <!-- Video -->
             <div class="aspect-video bg-black relative border-b border-bedana-gold/30 flex items-center justify-center">
-              {#if selectedMovement.videoUrl}
+              {#if selectedMovement.videos}
+                {#key selectedMovement.videos[activeSubVideoIndex].url}
+                  <video
+                    class="w-full h-full object-contain"
+                    src={selectedMovement.videos[activeSubVideoIndex].url}
+                    controls
+                    autoplay
+                    preload="metadata"
+                  >
+                    <track kind="captions">
+                  </video>
+                {/key}
+              {:else if selectedMovement.videoUrl}
                 {#key selectedMovement.videoUrl}
                   <video
                     class="w-full h-full object-contain"
@@ -172,6 +199,23 @@
                 </div>
               {/if}
             </div>
+
+            <!-- Multiple videos switcher -->
+            {#if selectedMovement?.videos}
+              <div class="flex items-center justify-center gap-3 bg-black/40 py-4 border-b border-white/5">
+                {#each selectedMovement.videos as vid, i}
+                  <button 
+                    on:click={() => activeSubVideoIndex = i}
+                    class="px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 border
+                      {activeSubVideoIndex === i 
+                        ? 'bg-bedana-gold text-black border-bedana-gold shadow-[0_0_15px_rgba(218,165,32,0.5)] scale-105' 
+                        : 'bg-white/10 text-gray-400 border-white/20 hover:bg-white/20 hover:text-white'}"
+                  >
+                    {vid.label}
+                  </button>
+                {/each}
+              </div>
+            {/if}
 
             <!-- Content -->
             <div class="p-6 sm:p-8">
